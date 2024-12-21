@@ -23,6 +23,20 @@ class LinkedList {
     this.size++;
   }
 
+  contains(data: number): boolean {
+    let current: LNode | null = this.head;
+
+    while (current) {
+      if (current.data === data) {
+        return true;
+      } else {
+        current = current.next;
+      }
+    }
+
+    return false;
+  }
+
   insertAt(idx: number, data: number) {
     if (idx < 0 || idx > this.size) {
       console.log("Out of bounds");
